@@ -1,4 +1,4 @@
-import com.sun.org.apache.xpath.internal.SourceTree;
+//import com.sun.org.apache.xpath.internal.SourceTree;
 
 import java.awt.SystemTray;
 import java.util.concurrent.ThreadLocalRandom;
@@ -20,8 +20,12 @@ public class WriteLoops {
 
         // Write a FOR loop that counts from 1 to 10.
             // calling
-            w = w + 1;
             // each time through the loop
+            
+        for(x = 0; x <5 ; x++){
+            
+            w = w + 1;
+        }    
 
         // this will tell the test how many times the loop executed.
         return w;
