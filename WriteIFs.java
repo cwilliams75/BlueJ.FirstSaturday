@@ -7,10 +7,21 @@
  */
 public class WriteIFs
 {
- 
+  int x;
+   int tt_t;
+   int tt_s;
+   int oo1, oo2;
+   String ss;
+
     public void playerDied(boolean player1) {
         // Write an IF statement that checks “player1.isAlive()” 
         // and if that’s false, calls “displayGameOver(player1)”
+        if(!isAlive (player1)){
+        
+         displayGameOver (player1);
+        }
+         
+        
      
     }
     
@@ -18,8 +29,12 @@ public class WriteIFs
         // Write an IF statement that checks the 
         // “temperature(room)” and if that check is less than 70, 
         // calls “heatOn()” else calls “coolOn()”
-
-
+        
+        if(tempurature(room) < 70){
+          heatOn();
+        }
+        else coolOn();
+            
         
         return this.ss;
     }
@@ -46,7 +61,7 @@ public class WriteIFs
      * 
      * 
      * instance variables
-     * / 
+     
    int x;
    int tt_t;
    int tt_s;
@@ -60,13 +75,15 @@ public class WriteIFs
   public WriteIFs()
   {
       // initialise instance variables
+     /*
       x = 0;
       tt_t = 0;
       tt_s = 1;
       ss = "";
       oo1 = 61;
       oo2 = 49;
-  }
+  */
+    } 
 
     // associated routines
     public boolean isAlive(boolean p) {
