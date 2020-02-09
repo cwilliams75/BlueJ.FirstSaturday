@@ -5,110 +5,129 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Supplier;
 
 /**
- * Writeloops get you thinking about how to do different things with loops.
- *
- * @author anonymous coward
- * @version -0.3
- * 
- */
+* Writeloops get you thinking about how to do different things with loops.
+*
+* @author anonymous coward
+* @version -0.3
+* 
+*/
 public class WriteLoops {
 
-    private static final int _3 = 3;
+private static final int _3 = 3;
 
-    public int oneToFive() {
-        int w = 0;
+public int oneToFive() {
+    int w = 0;
 
-        // Write a FOR loop that counts from 1 to 10.
+    // Write a FOR loop that counts from 1 to 10.
+        // calling
+        // each time through the loop
+        
+    for(int x = 0; x <5 ; x++){
+        
+        w = w + 1;
+    }    
+
+    // this will tell the test how many times the loop executed.
+    return w;
+}
+
+public int oneToTen() {
+    int w = 0;
+
+    // Write a FOR loop that counts from 1 to 10.
+    // calling
+    for(int i = 0; i < 10 ; i++){
+        
+    w = w + 1;
+    }
+    // each time through the loop
+    return w;
+}
+
+public int startAtTwentyOne() {
+    int w = 0;   
+    
+    // Write a FOR loop that makes 10 iterations, start at 21.
+    // calling
+    for(int loopVal = 0; loopVal < 11; loopVal++){
+    w = w + 1;
+}
+    // each time through the loop
+    
+    return w;
+}
+
+public int countDown() {
+    int w = 0;
+
+    // Write a FOR loop that counts down from 100 to 0.
+    // calling
+    for(int countDown = 0; countDown < 100; countDown++){
+    w = w + 1;
+    // each time through the loop
+}
+    return w;
+}
+
+public int byTwoTo32() {
+    int w = 0;
+
+    // Write a FOR loop from 0 to 32 by 2s.
+    // calling
+    for(int byTwo = 0; byTwo > 32; byTwo+=2){
+    w = w + 1;
+    // each time through the loop
+}
+    return w;
+}
+
+public int countDownFrom5000() {
+    int w = 0;
+
+    // Write a FOR loop from 1 to less than 5001 by 11s.
+    // calling
+    for(int countDownFrom = 0; countDownFrom <= 5001; countDownFrom += 11){
+    w = w + 1;
+    // each time through the loop
+}
+    return w;
+}
+
+public int nestedFors() {
+    int w = 0;
+
+    // Write a nested FOR loop(s), where one counts from
+    // 0 to less than 20 and the inner one counts from 0 to 4
             // calling
-            // each time through the loop
+        for(int i = 0; i < 20; i++){
             
-        for(int x = 0; x <5 ; x++){
-            
-            w = w + 1;
-        }    
-
-        // this will tell the test how many times the loop executed.
-        return w;
-    }
-
-    public int oneToTen() {
-        int w = 0;
-
-        // Write a FOR loop that counts from 1 to 10.
-        // calling
-        for(int i = 0; i < 10 ; i++){
-            
-        w = w + 1;
+            // each time through the inner loop
+                for(int j = 0; j <= 4; j++){
+                    w = w + 1;
+                }
         }
-        // each time through the loop
-        return w;
-    }
-
-    public int startAtTwentyOne() {
-        int w = 0;
-
-        // Write a FOR loop that makes 10 iterations, start at 21.
-        // calling
-        w = w + 1;
-        // each time through the loop
         
-        return w;
+    return w;
+}
+
+public int helloZipCode() {
+    int w = 0;
+
+    // Write a FOR loop that counts from 5 to 105. Put an IF
+    // statement inside the loop that checks the
+    // loop index counter and if it’s greater than 51,
+    // prints “Hello Zipcode” instead of the statement w = w + 1;
+
+            // calling
+    for(int i = 5; i <= 105; i++){
+           // w = w + 1;
+           if(i >= 51){
+                i = 105;  
+                System.out.println("Hello Zipcode");
+           }
+           w = w + 1;
     }
-
-    public int countDown() {
-        int w = 0;
-
-        // Write a FOR loop that counts down from 100 to 0.
-        // calling
-        w = w + 1;
-        // each time through the loop
-        
-        return w;
-    }
-
-    public int byTwoTo32() {
-        int w = 0;
-
-        // Write a FOR loop from 0 to 32 by 2s.
-        // calling
-        w = w + 1;
-        // each time through the loop
-        return w;
-    }
-
-    public int countDownFrom5000() {
-        int w = 0;
-
-        // Write a FOR loop from 1 to less than 5001 by 11s.
-        // calling
-        w = w + 1;
-        // each time through the loop
-        
-        return w;
-    }
-
-    public int nestedFors() {
-        int w = 0;
-
-        // Write a nested FOR loop(s), where one counts from
-        // 0 to less than 20 and the inner one counts from 0 to 4
-                // calling
-                w = w + 1;
-                // each time through the inner loop
-
-        return w;
-    }
-
-    public int helloZipCode() {
-        int w = 0;
-
-        // Write a FOR loop that counts from 5 to 105. Put an IF
-        // statement inside the loop that checks the
-        // loop index counter and if it’s greater than 51,
-        // prints “Hello Zipcode” instead of the statement w = w + 1;
-
-                // calling
-                w = w + 1;
+            
             // each time through the inner loop
         
         return w;
@@ -141,10 +160,12 @@ public class WriteLoops {
         // you need to use a .equals for two Strings.
 
             // calling
+        while(!gpsCurrentLocation().equals("Home")) {
+            driveSomeMore();
             w = w + 1;
             // each time through the inner loop
         
-
+        }
             return w;
     }
 
@@ -161,11 +182,13 @@ public class WriteLoops {
         int runningScore = 0;
 
         // do your while loop here
- 
+        while(runningScore < highestScore){
             // calling
+            runningScore += currentScore;
+            currentScore += gameNextScore();
             w = w + 1;
             // each time through the inner loop
-        
+        }        
         return w; // >= 3;
     }
 
@@ -178,11 +201,14 @@ public class WriteLoops {
         int runningScore = 0;
 
         // do your while loop here
-
+        do{
+            // calling
+            runningScore += currentScore;
+            currentScore += gameNextScore();
             // calling
             w = w + 1;
             // each time through the inner loop
-
+        }while(runningScore < highestScore);
         return w >= 3;
     }
 
@@ -194,13 +220,22 @@ public class WriteLoops {
         int w = 0;
         String adminPhoneNumber = "+1 202 456 1111";
         
-
+        while(serverIsRunning()){
+        waitFor(5);
         // calling
         w = w + 1;
-        // each time through the inner loop
-        
-        return w;
     }
+        if(!serverIsRunning()){
+        sendEmergencyText("Help!", adminPhoneNumber);
+        tryServerRestart("Help!", adminPhoneNumber);
+        }
+    // each time through the inner loop
+    
+    return w;
+}
+    
+        
+    
 
     // Declare an “int” i. Set i to 7.
     // Write a WHILE loop that checks “i” is less than 50,
